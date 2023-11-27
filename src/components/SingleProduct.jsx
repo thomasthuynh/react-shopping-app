@@ -28,7 +28,14 @@ const SingleProduct = ({ item }) => {
           </Card.Subtitle>
 
           {cart.some((ci) => ci.id === item.id) ? (
-            <Button variant="danger">Remove from Cart</Button>
+            <Button
+              variant="danger"
+              onClick={() => {
+                dispatch({ type: "REMOVE_FROM_CART", payload: item });
+              }}
+            >
+              Remove from Cart
+            </Button>
           ) : (
             <Button
               disabled={!item.inStock}
