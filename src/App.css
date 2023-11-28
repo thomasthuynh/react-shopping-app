@@ -45,6 +45,7 @@ a {
   align-items: center;
   margin: 0 20px;
   margin-bottom: 20px;
+  width: 300px;
 }
 
 .cartItemImg {
@@ -59,4 +60,8 @@ a {
   flex: 1;
   padding: 0 20px;
   flex-direction: column;
+}
+
+.summary {
+  width: 30%;
 }

@@ -1,7 +1,7 @@
 import Dropdown from "react-bootstrap/Dropdown";
 import React, { useContext } from "react";
 import { Link } from "react-router-dom";
-import { Badge, Container, FormControl, Nav, Navbar } from "react-bootstrap";
+import { Badge, Button, Container, FormControl, Nav, Navbar } from "react-bootstrap";
 import CartContext from "./context/Context";
 
 import { FaShoppingCart } from "react-icons/fa";
@@ -10,7 +10,7 @@ import { AiFillDelete } from "react-icons/ai";
 const Header = () => {
   const {
     state: { cart },
-    dispatch
+    dispatch,
   } = useContext(CartContext);
 
   return (
@@ -62,12 +62,15 @@ const Header = () => {
                     />
                   </span>
                 ))}
+                <Link to="/cart">
+                  <Button style={{width: "95%", margin: "0 10px"}}>
+                    Go to Cart
+                  </Button>
+                </Link>
               </div>
-            ) : <span style={{padding: 10}}>Cart is Empty!</span>}
-
-            {/* <Dropdown.Item href="#/action-1">Action</Dropdown.Item>
-            <Dropdown.Item href="#/action-2">Another action</Dropdown.Item>
-            <Dropdown.Item href="#/action-3">Something else</Dropdown.Item> */}
+            ) : (
+              <span style={{ padding: 10 }}>Cart is Empty!</span>
+            )}
           </Dropdown.Menu>
         </Dropdown>
       </Container>
