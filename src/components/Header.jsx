@@ -11,6 +11,7 @@ const Header = () => {
   const {
     state: { cart },
     dispatch,
+    productDispatch
   } = useContext(CartContext);
 
   return (
@@ -25,6 +26,12 @@ const Header = () => {
             style={{ width: 500 }}
             placeholder="Search a product"
             className="m-auto"
+            onChange={(e) => {
+              productDispatch({
+                type: "FILTER_BY_SEARCH",
+                payload: e.target.value
+              })
+            }}
           />
         </Navbar.Text>
 
